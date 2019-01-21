@@ -1,9 +1,8 @@
 # This Website 
-This website is published here:
-[Link](https://github.com/pages-themes/slate/)
+This website is published on [Github Pages](https://peterrautek.github.io/DTG/).
 
 # Slate Theme
-[Link](https://github.com/pages-themes/slate/)
+It is based on the [Slate Theme](https://github.com/pages-themes/slate/)
 ## Configuration variables
 
 Slate will respect the following variables, if set in your site's `_config.yml`:
