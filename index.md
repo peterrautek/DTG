@@ -9,7 +9,7 @@ It is often used to describe phenomena of change studied in Physics.
 The pivotal concept that underlies the theory of differential geometry is the differential structure that is given by tangent vector spaces. 
 Abstractly speaking we want to understand the change of some phenomenon occurring on a manifold, and this change is mathematically modeled using tangent vector spaces. 
 
-To define the notion of tangent vector spaces (and all concepts that are based on them, like cotangent vector spaces, tensor spaces, etc.) on a manifold we first need to have the notion of smooth functions and curves on manifolds. 
+To define the notion of tangent vector spaces (and all concepts that are based on them, like cotangent vector spaces, tensor spaces, etc.) on a manifold we first need to have the notion of smooth functions and curves, as well as tangent vectors on smooth manifolds. 
 We assume the basic notions of vector spaces (from [Linear Algebra](https://en.wikipedia.org/wiki/Linear_algebra)) and manifolds (from [Topology](https://en.wikipedia.org/wiki/Topological_manifold)) and will not further review them for the purpose of this brief overview. 
 
 ## Smooth Functions and Curves on Manifolds
@@ -60,7 +60,7 @@ $$X_{\gamma,p}: \mathcal{C}^\infty(M) \xrightarrow{\sim} \mathbb R$$
 
 $$f \mapsto (f\circ\gamma)'(0)$$
 
-where $$\mathbb R$$ is understood as a $$1$$-dimensional vector space over the field $$\mathbb R$$.
+where $$\mathbb R$$ is understood as a $$1$$-dimensional vector space over the field $$\mathbb R$$ and $$f\circ\gamma$$ is the pointwise function composition $$f$$ after $$\gamma$$.
 
 Note that $$f\circ\gamma$$ is a map $$\mathbb R\to\mathbb R$$, hence we can calculate the 'usual' derivative and evaluate it at $$0$$.
 
@@ -72,9 +72,9 @@ With the previous warning in mind: we should acknowledge once more at this point
 Once again - a _vector_ is an element of a _vector space_, and the vector space we are concerned with here is quite a bit different than the prime example of the Cartesian coordinate vector space.
 Let's try to develop some intuition for our new 'kind of vector' here before we continue with the actual definition of the tangent vector space.
 
-When we look at what will be called the _tangent vector_ $$X_{\gamma,p}$$, than we see by its very definition, it is nothing else than a linear map from all functions to $$\mathbb R$$.
+When we look at what will be called the _tangent vector_ $$X_{\gamma,p}$$, then we see by its very definition, it is nothing else than a linear map from all functions to $$\mathbb R$$.
 Remember that our manifolds are constructed to be locally similar to $$\mathbb R^{dim(M)}$$, but they aren't $$\mathbb R^{dim(M)}$$. 
-So the tangent vector is quite remarkable in that it takes a function (an element of \mathcal{C}^\infty(M)) and maps it to $$\mathbb R$$. 
+So the tangent vector is quite remarkable in that it takes a function (an element of $$\mathcal{C}^\infty(M)$$) and maps it to $$\mathbb R$$. 
 The way it is doing this is by taking the derivative (the one we know from calculus, i.e., the one that is defined on $$\mathbb R$$) of the function at a certain point in the direction of a certain curve.
 
 In other words: give me a curve that goes through a certain point on the manifold and I can tell you the derivative of any function in the direction of the curve at this point.
