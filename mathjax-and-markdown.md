@@ -22,8 +22,16 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 
 [MathJax Syntax](http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm)
 
-
-
+## Diagrams
+Via the [AMScd](http://www.jmilne.org/not/Mamscd.pdf) package:
+$$
+\require{AMScd}
+\begin{CD}
+K(X) @>{ch}>> H(X,\mathbb Q)\\
+@VVV @VVV \\
+K(Y) @>{ch}>> H(Y,\mathbb Q)
+\end{CD}
+$$
 
 ## Blockquote
 > This is a blockquote 
