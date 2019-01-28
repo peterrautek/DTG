@@ -264,6 +264,21 @@ So the notation $$(\frac{\partial}{\partial{x}^{a}})_{p}$$ was clearly chosen to
 but it is important to understand that the partial derivative is only defined on $$\mathbb R^d$$, 
 while our tangent vectors will allow us to compute directional derivatives on smooth manifolds.
 
+## Change of Components of Chart-Induced Basis of $$T_pM$$
+To change from components $$\dot{\gamma}^{j}_{x}$$ of a tangent vector given in the chart (U,x)-induced basis, 
+to components of a tangent vector in the chart (V,y)-induced basis, we need to first derive the objects
+$$(\frac{\partial y^i}{\partial x^j})_p$$ 
+
+The change of components of the tangent vector is then given as:
+
+$$\dot{\gamma}^{i}_{y} = \sum_{j=1..dim M} \dot{\gamma}^{j}_{x} (\frac{\partial y^i}{\partial x^j})_p $$
+
+which is commonly written in $$\sum$$instein notation as 
+
+$$\dot{\gamma}^{i}_{y} = \dot{\gamma}^{j}_{x} (\frac{\partial y^i}{\partial x^j})_p $$
+
+
+
 
 ## Gradient and Gradient Operator
 The gradient of a function in $$\mathcal{C}^\infty(M)$$ is a special case of the derivative. 
@@ -361,8 +376,8 @@ todo
 todo
 
 ***
-
-
+# Other Topics on This Website
+[An example of a Sphere with specific Charts](./examplesphere.html).
 
 # Differential Geometry Resources
 [Frederic Schuller's Youtube Lectures: Geometric Anatomy of Theoretical Physics](https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic)

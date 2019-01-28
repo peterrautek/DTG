@@ -33,6 +33,11 @@ K(Y) @>{ch}>> H(Y,\mathbb Q)
 \end{CD}
 $$
 
+And another one that was created with [an online editor](https://tikzcd.yichuanshen.de/)
+$$
+\begin{tikzcd} & \gamma \\ \mathbb R \arrow[ru, "\phi"] \arrow[rd, "\gamma"'] \arrow[r] & \\ & M \end{tikzcd}
+$$
+
 ## Blockquote
 > This is a blockquote 
 >
