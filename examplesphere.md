@@ -37,6 +37,7 @@ $$w^2\circ x^{-1}(u,v) \mapsto \arcsin(\sqrt{1-(u^2+v^2)})$$
 We define $$w\circ y^{-1}: y(L\cap V) \to w(L\cap V)$$:
 
 $$y^1\circ w^{-1}(lon, lat) \mapsto \cos(lat) \sin(lon) $$
+
 $$y^2\circ w^{-1}(lon, lat) \mapsto \cos(lat) \cos(lon) $$
 
 and its inverse map:
@@ -52,61 +53,63 @@ Take note (once more) that the chart transition maps as well as their inverses, 
 They transform the co-ordinates induced by one chart to the co-ordinates of another chart.
 
 ## Change of Components of Chart-Induced Basis of $$T_pM$$
-To change from components $$\dot{\gamma}^{j}_{y}$$ of a tangent vector given in the chart (V,y)-induced basis, 
-to components of the same tangent vector in the chart (L,w)-induced basis, we need to first derive the objects
-$$(\frac{\partial w^i}{\partial y^j})_p$$ 
+Using the above defined charts we can derive the chart-induced basis of the tangent vector space $$T_pM$$ for each chart and at each point (that is in the domain of the respective chart).
+These basis vectors are very handy objects and we can use them to write any tangent vector as a linear combination of them.
+This is the link to vector calculus where we write the linear combination coefficients as components of a vector.
+But we have to be very careful here to not forget that the components only make sense with respect to one specific basis of the tangent vector space that is only a valid basis in one specific chart.
 
-The change of components of the tangent vector is then given as:
+It becomes very clear (from the restriction that the components are only valid for one chart), that the components can be transformed into other components that are valid in respect to another chart induced basis.
+This change of components operation can easily be overlooked or misunderstood when we handle vectors (from vector calculus) carelessly.
 
-$$\dot{\gamma}^{i}_{w} = \sum_{j=1..2} \dot{\gamma}^{j}_{y} (\frac{\partial w^i}{\partial y^j})_p $$
+So let's look at the change of components for our example of the sphere. Let's say we want to change components that are valid in the chart induced basis of the lon,lat-chart, 
+to components that are valid in our other charts. 
 
-We first compute the four partial derivatives $$(\frac{\partial w^1}{\partial y^1})_p$$, $$(\frac{\partial w^1}{\partial y^2})_p$$, $$(\frac{\partial w^2}{\partial y^1})_p$$, $$(\frac{\partial w^2}{\partial y^2})_p$$ via their definition:
+Let's call our components of a tangent vector given in the chart (V,x)-induced basis $$\dot{\gamma}^{i}_{x}$$. 
+The components of the same tangent vector in the chart (L,w)-induced basis shall be called $$\dot{\gamma}^{j}_{w}$$. 
 
-$$(\frac{\partial w^i}{\partial y^j})_p = \partial_i (w^i \circ y^{-1})(y(p))$$ 
+We need to derive the objects 
+$$(\frac{\partial x^i}{\partial w^j})_p$$ 
+that carry all the information how to change the components.
+
+Once we have these partial derivatives the change of components of the tangent vector is given as:
+
+$$\dot{\gamma}^{i}_{x} = \sum_{j=1..2} \dot{\gamma}^{j}_{w} (\frac{\partial x^i}{\partial w^j})_p $$
+
+We first compute the four partial derivatives $$(\frac{\partial x^1}{\partial w^1})_p$$, $$(\frac{\partial x^1}{\partial w^2})_p$$, $$(\frac{\partial x^2}{\partial w^1})_p$$, $$(\frac{\partial x^2}{\partial w^2})_p$$ via their definition:
+
+$$(\frac{\partial x^i}{\partial w^j})_p = \partial_i (x^i \circ w^{-1})(w(p))$$ 
+
+* * *
+As we can see $$(x^i \circ w^{-1})(w(p))$$ are the component-wise chart transition maps from the (lon,lat) coordinates to the coordinates of the same point in the target chart.
+These chart transition maps are given above. We will simply need to derive their partial derivatives and then plug them together in the right way to get a full description of how the components change.
+
+Let's first get these partial derivatives out of the way:
+
+$$\frac{\partial}{\partial lon}(\cos(lat)\sin(lon))(lon,lat) = \cos(lon)\cos(lat)$$ 
+
+$$\frac{\partial}{\partial lat}(\cos(lat)\sin(lon))(lon,lat) = -\sin(lon)\sin(lat)$$ 
+
+$$\frac{\partial}{\partial lon} (-\cos(lat)\cos(lon))(lon,lat) = \sin(lon)\cos(lat)$$
+
+$$\frac{\partial}{\partial lat} (-\cos(lat)\cos(lon))(lon,lat) =  \cos(lon)\sin(lat)$$
 
 * * *
 
-We will use the chart transition maps that are given above and will need the partial derivatives of 
-$$\arcsin(-\sqrt{1-(u^2+v^2)})$$ and $$\arctan_2(v,u)$$. Let's get them out of the way first:
+We will use them and the chart transition maps to compute the $$(\frac{\partial x^i}{\partial w^j})_p$$:
 
-$$\frac{\partial}{\partial u}(\arcsin(-\sqrt{1-(u^2+v^2)}))(u,v) = \frac{u}{\sqrt{-(u^2+v^2-1)(u^2+v^2)}}$$ 
+$$(\frac{\partial x^1}{\partial w^1})_p = $$
+$$ \partial_1(x^1 \circ w^{-1})(w(p)) = $$ 
+$$ \partial_1( ... todo )(w(p)) = $$
 
-$$\frac{\partial}{\partial v}(\arcsin(-\sqrt{1-(u^2+v^2)}))(u,v) = \frac{v}{\sqrt{-(u^2+v^2-1)(u^2+v^2)}}$$ 
-
-$$\frac{\partial}{\partial u} (\arctan_2)(v,u) = \frac{\partial}{\partial u}(\arctan)(\frac{v}{u}) = \frac{-v}{u^2+v^2} $$
-
-$$\frac{\partial}{\partial v} (\arctan_2)(v,u) = \frac{\partial}{\partial u}(\arctan)(\frac{v}{u}) = \frac{u}{u^2+v^2} $$
+...
 
 * * *
 
-We will use them and the chart transition maps to compute the $$(\frac{\partial w^i}{\partial y^j})_p$$:
+With these objects it is straight forward to convert components of a tangent vector in the chart (L,w)-induced basis, 
+to components of the same tangent vector in the chart (U,x)-induced basis. 
 
-$$(\frac{\partial w^1}{\partial y^1})_p = $$
-$$ \partial_1(w^1 \circ y^{-1})(y(p)) = $$ 
-$$ \partial_1(arctan_2(u,v))(y(p)) = $$
-$$\frac{-u}{u^2+v^2}$$ 
+Analogously, we need to derive the transformation objects for each pair of overlapping charts.
 
-$$(\frac{\partial w^1}{\partial y^2})_p = $$
-$$ \partial_2(w^1 \circ y^{-1})(y(p)) = $$ 
-$$ \partial_2(arctan_2(u,v))(y(p)) = $$
-$$\frac{v}{u^2+v^2}$$ 
-
-$$(\frac{\partial w^2}{\partial y^1})_p = $$
-$$ \partial_1(w^2 \circ y^{-1})(y(p)) = $$ 
-$$ \partial_1(arcsin(-\sqrt{1-(u^2+v^2)}))(y(p)) = $$
-$$\frac{u}{\sqrt{-(u^2+v^2-1)(u^2+v^2)})}$$ 
-
-$$(\frac{\partial w^2}{\partial y^2})_p = $$
-$$ \partial_2(w^2 \circ y^{-1})(y(p)) = $$ 
-$$ \partial_2(arcsin(-\sqrt{1-(u^2+v^2)}))(y(p)) = $$
-$$\frac{v}{\sqrt{-(u^2+v^2-1)(u^2+v^2)})}$$ 
-
-* * *
-
-With these objects it is straight forward to convert components of a tangent vector in the chart (V,y)-induced basis, 
-to components of the same tangent vector in the chart (L,w)-induced basis. 
-
-Analogously we need to derive the transformation objects for each pair of overlapping charts.
 
 * * *
 If you are familiar with the [Jacobian matrix from vector calculus](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant), 
