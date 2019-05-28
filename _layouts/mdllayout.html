@@ -48,8 +48,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css"-->
 	
-	<link rel="stylesheet" href="/assets/css/material.min.css">
-    <link rel="stylesheet" href="/assets/css/mdl-styles.css">
+	<link rel="stylesheet" href={{ "/assets/css/material.min.css" | relative_url }}>
+	<link rel="stylesheet" href={{ "/assets/css/mdl-styles.css" | relative_url }}>
+
     <style>
     #view-source {
       position: fixed;
