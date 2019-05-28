@@ -1,0 +1,28 @@
+---
+layout: mdllayout
+---
+
+
+			<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+				<div class="mdl-card mdl-cell mdl-cell--12-col">
+				  <div class="mdl-card__supporting-text">
+					{{content}}
+				  </div>
+				  <div class="mdl-card__actions" id="test">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect " id="{{slug}}"> 
+					<i class="material-icons">more_horiz</i>
+					</button>
+				  </div>
+				  
+				</div>
+				<!--button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+				  <i class="material-icons">more_vert</i>
+				</button-->
+				<ul class="mdl-menu mdl-js-menu mdl-menu--top-left" for="{{slug}}">
+				  <li class="mdl-menu__item">todo</li>
+				  <li class="mdl-menu__item" disabled>optional</li>
+				  <li class="mdl-menu__item" disabled>more</li>
+				  <li class="mdl-menu__item">info</li>
+				</ul>
+			</section>
+			

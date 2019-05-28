@@ -1,0 +1,95 @@
+---
+layout: mdllayout
+---
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+		<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+				<div class="mdl-card mdl-cell mdl-cell--12-col">
+				  <div class="mdl-card__supporting-text">
+<h2> Overview </h2>
+<p> <a href="https://en.wikipedia.org/wiki/Differential_geometry">Differential Geometry</a> studies problems in geometry by applying concepts from calculus, linear algebra, and topology. 
+It is often used to describe phenomena of change studied in Physics. 
+</p><p>
+The pivotal concept that underlies the theory of differential geometry is the differential structure that is given by tangent vector spaces. 
+Abstractly speaking we want to understand the change of some phenomenon occurring on a manifold, and this change is mathematically modeled using tangent vector spaces. 
+</p><p>
+To define the notion of tangent vector spaces (and all concepts that are based on them, like cotangent vector spaces, tensor spaces, etc.) on a manifold we first need to have the notion of smooth functions and curves, as well as tangent vectors on smooth manifolds. 
+We assume the basic notions of vector spaces (from <a href="https://en.wikipedia.org/wiki/Linear_algebra">Linear Algebra</a> ) and manifolds (from <a href="https://en.wikipedia.org/wiki/Topological_manifold">Topology</a>) and will not further review them for the purpose of this brief overview. 
+</p><p>
+				</div>
+			</div>
+		</section>
+		</div> 
+
+{% for collectionOfCards in site.collections %}
+	{%assign collectionLabel = collectionOfCards.label %}
+		<div class="mdl-layout__tab-panel" id={{collectionLabel}} >
+	
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+		  
+            <div class="mdl-cell mdl-cell--12-col">
+			<h2>{{collectionOfCards.title}} </h2>   
+
+				{% assign hasTOC = false %}
+				{% for card in collectionOfCards.docs  %}	
+				{% if card.toc_entry %}
+					{% assign hasTOC = true %}
+				{% endif %}
+				{% endfor %}
+				
+				{% if hasTOC %}
+				<ul class="toc">
+                <h3>Contents</h3>
+				{% for card in collectionOfCards.docs  %}	
+				<a>{{card.toc_entry}}</a>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			 
+           
+			{% for card in collectionOfCards.docs  %}	
+			
+				{% assign hasFurther = false %}
+				{% for item in card.further  %}	
+					{% assign hasFurther = true %}
+				{% endfor %}
+				
+			<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+				<div class="mdl-card mdl-cell mdl-cell--12-col">
+				  <div class="mdl-card__supporting-text">
+					{{card.content}}
+				  </div>
+				  {% if hasFurther %}
+				  <div class="mdl-card__actions">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect " id="{{card.slug}}"> 
+					<i class="material-icons">more_horiz</i>
+					</button>
+				  </div>
+				  {% endif %}
+				  
+				</div>
+				<!--button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+				  <i class="material-icons">more_vert</i>
+				</button-->
+				
+				{% if hasFurther %}
+				<ul class="mdl-menu mdl-js-menu mdl-menu--top-left" for="{{card.slug}}">
+					{% for item in card.further  %}	
+					{% assign itemname = item.title %}
+				  <li class="mdl-menu__item">
+					<a href = "{{item.url}}">
+					{{itemname}}
+					{% if item.type == 'video' %}
+					<i class="material-icons">movie</i>
+					{% endif %}
+					</a>
+				  </li>
+				  {% endfor %}
+				</ul>
+				{% endif %}
+			</section>
+			{% endfor %}
+			
+		 </div>
+          </section>
+        </div>
+	{% endfor %}	

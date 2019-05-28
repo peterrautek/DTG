@@ -1,2 +1,20 @@
 title: Smooth Manifold Primer
 theme: jekyll-theme-slate
+collections_dir: cards
+collections: 
+  chapter01:
+    output: true
+    permalink: /:collection/:title/
+    title: Tangent Vector Spaces
+  chapter02:
+    output: true
+    permalink: /:collection/:title/
+    title: Charts and Co-ordinates
+  chapter03:
+    output: true
+    permalink: /:collection/:title/
+    title: Derivatives
+  chapter04:
+    output: true
+    permalink: /:collection/:title/
+    title: TODO
