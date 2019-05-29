@@ -5,7 +5,7 @@
 
 # URL handle for generated webpage
 slug:      ch01s03
-
+toc_entry: Tangent Vectors 
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---

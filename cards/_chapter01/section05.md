@@ -5,7 +5,7 @@
 
 # URL handle for generated webpage
 slug:      ch01s05
-
+toc_entry: Tangent Spaces \(T_pM\)
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---

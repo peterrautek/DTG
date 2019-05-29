@@ -15,6 +15,36 @@ Abstractly speaking we want to understand the change of some phenomenon occurrin
 To define the notion of tangent vector spaces (and all concepts that are based on them, like cotangent vector spaces, tensor spaces, etc.) on a manifold we first need to have the notion of smooth functions and curves, as well as tangent vectors on smooth manifolds. 
 We assume the basic notions of vector spaces (from <a href="https://en.wikipedia.org/wiki/Linear_algebra">Linear Algebra</a> ) and manifolds (from <a href="https://en.wikipedia.org/wiki/Topological_manifold">Topology</a>) and will not further review them for the purpose of this brief overview. 
 </p><p>
+
+<br>
+<br>
+
+<h2>Table of Contents</h2>
+<p>
+<ul class="toc">
+{% for collectionOfCards in site.collections %}
+	{%assign collectionLabel = collectionOfCards.label %}
+	
+			<a href="#{{collectionLabel}}" >{{forloop.index}} {{collectionOfCards.title}} </a>   
+
+				{% assign hasTOC = false %}
+				{% for card in collectionOfCards.docs  %}	
+				{% if card.toc_entry %}
+					{% assign hasTOC = true %}
+				{% endif %}
+				{% endfor %}
+				
+				{% if hasTOC %}
+				<ul class="toc">
+				{% for card in collectionOfCards.docs  %}	
+				<a>{{card.toc_entry}}</a>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			{% endfor %}
+	</ul>
+</p>
+
 				</div>
 			</div>
 		</section>
