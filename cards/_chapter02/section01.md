@@ -5,7 +5,7 @@
 
 # URL handle for generated webpage
 slug:      ch02s01
-
+toc_entry: Charts, Atlas, Co-ordinates, Chart Transitions
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---

@@ -5,11 +5,10 @@
 
 # URL handle for generated webpage
 slug:      ch02s03
-
+toc_entry: Chart-Induced Basis of \(T_pM\) 
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
-
 
 ## Chart-Induced Basis of $$T_pM$$ 
 

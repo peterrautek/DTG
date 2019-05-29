@@ -5,7 +5,7 @@
 
 # URL handle for generated webpage
 slug:      ch02s02
-
+toc_entry: The Purpose of Defining a Manifold
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
