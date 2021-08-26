@@ -1,20 +1,24 @@
-title: Smooth Manifold Primer
+title: Riemannian Geometry Zoo
 theme: jekyll-theme-slate
 collections_dir: cards
 collections: 
   chapter01:
     output: true
     permalink: /:collection/:title/
-    title: Tangent Vector Spaces
+    title: Manifolds
   chapter02:
     output: true
     permalink: /:collection/:title/
-    title: Charts and Co-ordinates
+    title: Tangent Vector Spaces
   chapter03:
     output: true
     permalink: /:collection/:title/
-    title: Derivatives
+    title: Charts and Co-ordinates
   chapter04:
+    output: true
+    permalink: /:collection/:title/
+    title: Derivatives
+  chapter05:
     output: true
     permalink: /:collection/:title/
     title: TODO

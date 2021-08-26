@@ -4,27 +4,24 @@
 # longer blocks of text should start with a a leading > to escape all special characters
 
 # URL handle for generated webpage
-slug:      ch01s03
-toc_entry: Tangent Vectors 
+slug:      ch01s01
+toc_entry: Smooth Functions and Curves - Notation
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
+## Smooth Functions and Curves - Notation
 
-## Tangent Vectors 
+Let $$M$$ be a (real and smooth) manifold. We define an infinite-dimensional vector space over $$\mathbb R$$ with the underlying set of all smooth functions $$\mathcal{C}^\infty(M)$$
 
-Let $$\gamma:\mathbb R\to M$$ be a smooth curve through $$p\in M$$ such that $$\gamma(\lambda_0)=p$$. 
-The _directional derivative operator_ at $$p$$ along $$\gamma$$ is the linear map
+$$\mathcal{C}^\infty(M) := \{f: M \to \mathbb R \mid f\text{ is smooth}\} $$
 
-$$X_{\gamma,p}: \mathcal{C}^\infty(M) \xrightarrow{\sim} \mathbb R$$
+and with point-wise defined operations, (i.e. for any $$p\in M$$, and any $$\lambda \in \mathbb R$$):
 
-$$f \mapsto (f\circ\gamma)'(\lambda_0)$$
+$$(f+g)(p) := f(p)+g(p)$$
 
-where $$\mathbb R$$ is understood as a $$1$$-dimensional vector space over the field $$\mathbb R$$ and $$f\circ\gamma$$ is the point-wise function composition $$f$$ after $$\gamma$$.
+$$(\lambda f)(p) := \lambda f(p)$$
 
-Note that $$f\circ\gamma$$ is a map $$\mathbb R\to\mathbb R$$.
-Hence we can calculate the 'usual' derivative and evaluate it at $$\lambda_0$$.
+We define a _smooth curve_ on $$M$$ as a smooth map $$\gamma: \mathbb R \to M$$, where $$\mathbb R$$ is understood as a $$1$$-dimensional manifold.
 
-$$(f\circ\gamma)'(\lambda_0) = f'(\gamma(\lambda_0))$$
-
-In differential geometry, $$X_{\gamma,p}$$ is called the _tangent vector_ to the curve $$\gamma$$ at the point $$p\in M$$. 
+This definition also applies to smooth maps $$I\to M$$ for an open interval $$I\subseteq \mathbb R$$.

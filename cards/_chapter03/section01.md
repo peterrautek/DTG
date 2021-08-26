@@ -4,50 +4,71 @@
 # longer blocks of text should start with a a leading > to escape all special characters
 
 # URL handle for generated webpage
-slug:      ch03s01
-
+slug:      ch02s01
+toc_entry: Charts, Atlas, Co-ordinates, Chart Transitions
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
-## Gradient and Gradient Operator
-The gradient of a function in $$\mathcal{C}^\infty(M)$$ is a special case of the derivative. 
-Let's first define the gradient and the related gradient operator, which we will use to construct the Cotangent Space.
+## Co-ordinates - Good or Bad?
+So far we haven't said much about co-ordinates, because we kept concepts mathematical. 
+Once you want to start computing anything on a manifold you will need to understand the relation between co-ordinates, charts, and manifolds.
 
-Let $$M$$ be a manifold and let $$f: M \to \mathbb R$$ be smooth. The _gradient_ of $$f$$ at $$p\in M$$ is the covector (an element of the Cotangent space at $$p$$)
+The charts are the objects that will allow us to compute something on a manifold. 
+From the charts we get co-ordinates, and a basis for the tangent vector spaces. 
+They allow us to use real numbers for our computations.
+Consequently for the practitioner the charts are very important objects. 
 
-$$d_pf: T_pM \xrightarrow{\sim} T_{f(p)} \mathbb R \cong_\mathrm{vec} \mathbb R $$
+For the mathematician and the theoretical physicist who derive facts about manifolds in general, 
+the charts are the evil objects that need to be avoided as much as possible. 
+The reason being that showing something in a chart-free (i.e., co-ordinate-free) way means that we can avoid 
+to write it down for every possible co-ordinate system. 
+It simply works for any co-ordinate system.
 
-$$X \mapsto d_pf(X) := X(f) $$
+## Charts and Co-ordinates
 
-In fact, we can define the _gradient operator_ at $$p\in M$$ as the $$\mathbb R$$-linear map 
+Let $$M$$ be a $$d$$-dimensional manifold. 
+A pair $$(U,x)$$ where $$U$$ is an open set in the topological manifold and 
+$$x: U \to x(U) \subseteq \mathbb R^d$$ is a homeomorphism (has a continuous inverse), is said to be a _chart_ of the manifold.
 
-$$d_p : \mathcal{C}^\infty(U) \xrightarrow{\sim} T^*_pM$$
+The _component functions_ of $$x: U\to x(U)$$ are the maps:
 
-$$f \mapsto d_pf$$
+$$x^i : U  \to \mathbb R$$
 
-with $$p\in U\subseteq M$$.
+$$p \mapsto \text{proj}_i(x(p))$$
+
+for $$1\leq i\leq d$$, where $$\text{proj}_i(x(p))$$ is the $$i$$-th component of $$x(p)\in \mathbb R^d$$. 
+The $$x^i(p)$$ are called the _co-ordinates_ of the point $$p\in U$$ with respect to the chart $$(U,x)$$.
 
 
-## Cotangent Space $$T^*_pM$$ and its Chart Induced Basis
+### Atlas
 
-Let $$M$$ be a manifold and $$p\in M$$ a point on the manifold and let $$T_pM$$ denote the tangent space at $$p$$. 
-The _cotangent space_ to $$M$$ at $$p$$ is defined as the vector space dual:
+An _atlas_ of a manifold $$M$$ is a collection $$\mathscr{A}:=\{(U_\alpha,x_\alpha)\mid \alpha \in \mathcal{A}\}$$ of charts such that:
 
-$$\rm T^*_pM := (T_pM)^* = Hom(T_pM, \mathbb R)$$
+$$\bigcup_{\alpha \in \mathcal{A}}U_\alpha = M. $$
 
-which is the set of all linear maps from elements of the _tangent vector space_ $$T_pM$$ to $$\mathbb R$$.
 
-* * *
+### Chart Transition Maps
 
-Let $$(U,x)$$ be a chart on $$M$$, with $$p\in U$$. 
+Two charts $$(U,x)$$ and $$(V,y)$$ are said to be $$\mathcal{C}^0$$_-compatible_ if 
+either $$U \cap V = \emptyset$$ or the map:
+$$
+y\circ x^{-1}: x(U\cap V) \to y(U\cap V)
+$$
+is continuous.
 
-We can apply the gradient operator $$d_p$$ (with $$p\in U$$) 
-to each of the basis vectors of $$\{(\frac{\partial}{\partial{x}^{a}})_{p}\}$$ to obtain $$(\dim M)$$-many elements of $$T^*_p M$$.
 
-The set $$\{d_px^a\mid 1\leq a \leq \dim M\}$$ can be shown to form a basis of $$T^*_p M$$.
+Note that $$y\circ x^{-1}$$ is a map from a subset of $$\mathbb R^d$$ to a subset of $$\mathbb R^d$$.
 
-If $$\{(\frac{\partial}{\partial{x}^{a}})_{p}\}$$ is the basis of $$T_pM$$ induced by a chart $$(U,x)$$, then the dual basis is denoted as $$\{({\rm d} x^a)_p\}$$
-and by definition (of the dual) we have
 
-$$({\rm d}x^a)_p \left( \left( \frac{\partial}{\partial{x}^{b}} \right)_{p} \right) = \delta^a_b$$
+[//]: # & U\cap V \se M \ar[ldd,"x"'] \ar[rdd,"y"]&\\
+[//]: # &&&\\
+[//]: # x(U\cap V) \se \R^d \ar[rr,"y\circ x^{-1}"']& & y(U\cap V)\se \R^d
+[//]: # \end{tikzcd}
+
+
+Since the maps $$x$$ and $$y$$ are homeomorphisms, the composition map $$y \circ x^{-1}$$ is also a homeomorphism 
+and hence continuous. 
+Therefore, any two charts on a topological manifold are $$\mathcal{C}^0$$-compatible. 
+
+The map $$y\circ x^{-1}$$ (and its inverse $$x\circ y^{-1}$$) is called the _chart transition map_.

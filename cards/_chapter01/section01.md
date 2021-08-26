@@ -5,23 +5,12 @@
 
 # URL handle for generated webpage
 slug:      ch01s01
-toc_entry: Smooth Functions and Curves on Manifolds
+toc_entry: Riemaniann Manifolds
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
-## Smooth Functions and Curves on Manifolds
+## Riemaniann Manifolds
 
-Let $$M$$ be a (real and smooth) manifold. We define an infinite-dimensional vector space over $$\mathbb R$$ with the underlying set of all smooth functions $$\mathcal{C}^\infty(M)$$
-
-$$\mathcal{C}^\infty(M) := \{f: M \to \mathbb R \mid f\text{ is smooth}\} $$
-
-and with point-wise defined operations, (i.e. for any $$p\in M$$, and any $$\lambda \in \mathbb R$$):
-
-$$(f+g)(p) := f(p)+g(p)$$
-
-$$(\lambda f)(p) := \lambda f(p)$$
-
-We define a _smooth curve_ on $$M$$ as a smooth map $$\gamma: \mathbb R \to M$$, where $$\mathbb R$$ is understood as a $$1$$-dimensional manifold.
-
-This definition also applies to smooth maps $$I\to M$$ for an open interval $$I\subseteq \mathbb R$$.
+The first section in our zoo is about the largest of the animals itself: the Riemannian Manifold. There are many different manifolds out there that fill an entire zoo on their own, but our zoo has one species only - the Riemannian Manifold. It belongs to the family of the differentiable manifolds and is different from the other manifolds in its family by having a metric. A metric is an animal that serves in the calculations of distances, angles, areas and volumes. Other manifolds really don’t have that and are therefore a lot more abstract then our Riemannian manifold. There are other noteworthy geometric animals in this section of the zoo, like points, curves, tangents, and continuous functions, that have a life on their own in the zoo of mathematics, but we are mostly interested in them because they also live on manifolds, and we will need them to understand the relations between the other animals in our zoo. Before we move on to the other section of the zoo, let’s have a deeper look at the manifold itself. When we dissect a smooth manifold we will find that each manifold is locally a linear space, which means that when we look close enough, no matter where, we can deal with it as if it were a flat space locally. This property is very important because it will allow us to use all kinds of linear maps on the manifold which we will visit later. A smooth manifold is a space that consists of a set of points that are connected in a smooth way. It has evolved from much simpler animals like fields C, R, or coordinate spaces $$\mathbb R^2$$, … $$\mathbb R^n$$. 
+For instance a Real and smooth manifold, is in general not only described by one coordinate space, but by many - hence the name mani-fold. Let’s look at a two dimensional real and smooth manifold - for instance the surface of the sphere: The surface of the sphere cannot be represented in a continuous way by one coordinate system - simply because - no matter how we try to put one coordinate system onto the sphere - the coordinates make jumps at certain places. This doesn’t sound like a big deal - but it is - because if we want to make use of the full machinery of continuous mathematics, especially differential- and integral calculus, we need the coordinate system to be continuous - no jumps allowed. So manifolds evolved from simple coordinate spaces to a species that has many coordinate spaces that can be stitched together in a certain way. A great deal of theory went into this evolution - but we as zoologists aren’t so much concerned with this theory we can just happily accept that smooth manifolds use multiple coordinate spaces, stitched together, to keep everything smooth and hence enable us to cultivate other animals on them that previously could only live in simpler and flat spaces.

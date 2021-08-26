@@ -5,12 +5,12 @@
 
 # URL handle for generated webpage
 slug:      ch01s05
-toc_entry: Tangent Spaces \(T_pM\)
+toc_entry: Tangent Spaces \(T_pM\) - Notation
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
-## Tangent Space $$T_pM$$
+## Tangent Space $$T_pM$$ - Notation
 
 Let $$M$$ be a manifold and $$p\in M$$. The _tangent space_ $$(T_pM, \oplus, \odot)$$  to $$M$$ at $$p$$ is the vector space over $$\mathbb R$$ with underlying set
 

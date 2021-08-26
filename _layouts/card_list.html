@@ -2,124 +2,157 @@
 layout: mdllayout
 ---
         <div class="mdl-layout__tab-panel is-active" id="overview">
-		<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-				<div class="mdl-card mdl-cell mdl-cell--12-col">
-				  <div class="mdl-card__supporting-text">
-<h2> Overview </h2>
-<p> <a href="https://en.wikipedia.org/wiki/Differential_geometry">Differential Geometry</a> studies problems in geometry by applying concepts from calculus, linear algebra, and topology. 
-It is often used to describe phenomena of change studied in Physics. 
-</p><p>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+
+<p> 
+The goal of this site is to provide an understanding of mathematical concepts from Riemannian geometry that occur in many applications in Computer Science as well as Physics. 
+The focus will neither be on proofing anything nor deriving anything mathematically, but instead we will treat the mathematical concepts like animals in a zoo, the Riemannian Geometry Zoo. 
+We will give an overview of the species that live in the zoo and describe the relations between them.
+</p>
+
+<br>
+
+<p>
+Specifically we will build an inventory of the different species and describe their properties. 
+The approach we will take will be very much like that of a zoologist who describes different species by their habitats, their anatomy and their function in their ecosystem.
+</p>
+
+<br>
+<p>
+At times the listing of properties and functions of the different species of animals will be a dry subject. 
+We will therefore try to bring them to life by showing images of the animals from the zoo and illustrate how they live and interact.
+</p>
+
+<br>
+<p>
+Our Riemannian Geometry Zoo is divided into two sections. 
+There are the geometric animals: like manifolds and curves, and there is the much larger section in the zoo which is dedicated to maps. 
+Maps are animals that eat something and produce something. 
+There is a great variety of the family of maps that live on manifolds and we shall visit them one by one.
+</p>
+ 
+<br>
+<p>
+    The mathematical concepts collected in our zoo are from the field of <a href="https://en.wikipedia.org/wiki/Differential_geometry">Differential Geometry</a> 
+    and make heavy use of concepts from calculus, linear algebra, and topology. 
+    They are useful for studying problems in geometry, computer science and physics.  
+</p>
+ 
+<br>
+<!--p>
 The pivotal concept that underlies the theory of differential geometry is the differential structure that is given by tangent vector spaces. 
 Abstractly speaking we want to understand the change of some phenomenon occurring on a manifold, and this change is mathematically modeled using tangent vector spaces. 
 </p><p>
 To define the notion of tangent vector spaces (and all concepts that are based on them, like cotangent vector spaces, tensor spaces, etc.) on a manifold we first need to have the notion of smooth functions and curves, as well as tangent vectors on smooth manifolds. 
 We assume the basic notions of vector spaces (from <a href="https://en.wikipedia.org/wiki/Linear_algebra">Linear Algebra</a> ) and manifolds (from <a href="https://en.wikipedia.org/wiki/Topological_manifold">Topology</a>) and will not further review them for the purpose of this brief overview. 
-</p><p>
-
+</p-->
+ 
 <br>
 <br>
-
-<h2>Table of Contents</h2>
+ 
+<h3>Table of Contents</h3>
 <p>
 <ul class="toc">
 {% for collectionOfCards in site.collections %}
-	{%assign collectionLabel = collectionOfCards.label %}
-	
-			<a href="#{{collectionLabel}}" >{{forloop.index}} {{collectionOfCards.title}} </a>   
-
-				{% assign hasTOC = false %}
-				{% for card in collectionOfCards.docs  %}	
-				{% if card.toc_entry %}
-					{% assign hasTOC = true %}
-				{% endif %}
-				{% endfor %}
-				
-				{% if hasTOC %}
-				<ul class="toc">
-				{% for card in collectionOfCards.docs  %}	
-				<a>{{card.toc_entry}}</a>
-				{% endfor %}
-				</ul>
-				{% endif %}
-			{% endfor %}
-	</ul>
+    {%assign collectionLabel = collectionOfCards.label %}
+    
+            <a href="#{{collectionLabel}}" >{{forloop.index}} {{collectionOfCards.title}} </a>   
+ 
+                {% assign hasTOC = false %}
+                {% for card in collectionOfCards.docs  %}   
+                {% if card.toc_entry %}
+                    {% assign hasTOC = true %}
+                {% endif %}
+                {% endfor %}
+                
+                {% if hasTOC %}
+                <ul class="toc">
+                {% for card in collectionOfCards.docs  %}   
+                <a>{{card.toc_entry}}</a>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endfor %}
+    </ul>
 </p>
-
-				</div>
-			</div>
-		</section>
-		</div> 
-
+ 
+                </div>
+            </div>
+        </section>
+        </div> 
+ 
 {% for collectionOfCards in site.collections %}
-	{%assign collectionLabel = collectionOfCards.label %}
-		<div class="mdl-layout__tab-panel" id={{collectionLabel}} >
-	
+    {%assign collectionLabel = collectionOfCards.label %}
+        <div class="mdl-layout__tab-panel" id={{collectionLabel}} >
+    
           <section class="section--center mdl-grid mdl-grid--no-spacing">
-		  
+          
             <div class="mdl-cell mdl-cell--12-col">
-			<h2>{{collectionOfCards.title}} </h2>   
-
-				{% assign hasTOC = false %}
-				{% for card in collectionOfCards.docs  %}	
-				{% if card.toc_entry %}
-					{% assign hasTOC = true %}
-				{% endif %}
-				{% endfor %}
-				
-				{% if hasTOC %}
-				<ul class="toc">
+            <h2>{{collectionOfCards.title}} </h2>   
+ 
+                {% assign hasTOC = false %}
+                {% for card in collectionOfCards.docs  %}   
+                {% if card.toc_entry %}
+                    {% assign hasTOC = true %}
+                {% endif %}
+                {% endfor %}
+                
+                {% if hasTOC %}
+                <ul class="toc">
                 <h3>Contents</h3>
-				{% for card in collectionOfCards.docs  %}	
-				<a>{{card.toc_entry}}</a>
-				{% endfor %}
-				</ul>
-				{% endif %}
-			 
+                {% for card in collectionOfCards.docs  %}   
+                <a>{{card.toc_entry}}</a>
+                {% endfor %}
+                </ul>
+                {% endif %}
+             
            
-			{% for card in collectionOfCards.docs  %}	
-			
-				{% assign hasFurther = false %}
-				{% for item in card.further  %}	
-					{% assign hasFurther = true %}
-				{% endfor %}
-				
-			<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-				<div class="mdl-card mdl-cell mdl-cell--12-col">
-				  <div class="mdl-card__supporting-text">
-					{{card.content}}
-				  </div>
-				  {% if hasFurther %}
-				  <div class="mdl-card__actions">
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect " id="{{card.slug}}"> 
-					<i class="material-icons">more_horiz</i>
-					</button>
-				  </div>
-				  {% endif %}
-				  
-				</div>
-				<!--button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-				  <i class="material-icons">more_vert</i>
-				</button-->
-				
-				{% if hasFurther %}
-				<ul class="mdl-menu mdl-js-menu mdl-menu--top-left" for="{{card.slug}}">
-					{% for item in card.further  %}	
-					{% assign itemname = item.title %}
-				  <li class="mdl-menu__item">
-					<a href = "{{item.url}}">
-					{{itemname}}
-					{% if item.type == 'video' %}
-					<i class="material-icons">movie</i>
-					{% endif %}
-					</a>
-				  </li>
-				  {% endfor %}
-				</ul>
-				{% endif %}
-			</section>
-			{% endfor %}
-			
-		 </div>
+            {% for card in collectionOfCards.docs  %}   
+            
+                {% assign hasFurther = false %}
+                {% for item in card.further  %} 
+                    {% assign hasFurther = true %}
+                {% endfor %}
+                
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    {{card.content}}
+                  </div>
+                  {% if hasFurther %}
+                  <div class="mdl-card__actions">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect " id="{{card.slug}}"> 
+                    <i class="material-icons">more_horiz</i>
+                    </button>
+                  </div>
+                  {% endif %}
+                  
+                </div>
+                <!--button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+                  <i class="material-icons">more_vert</i>
+                </button-->
+                
+                {% if hasFurther %}
+                <ul class="mdl-menu mdl-js-menu mdl-menu--top-left" for="{{card.slug}}">
+                    {% for item in card.further  %} 
+                    {% assign itemname = item.title %}
+                  <li class="mdl-menu__item">
+                    <a href = "{{item.url}}">
+                    {{itemname}}
+                    {% if item.type == 'video' %}
+                    <i class="material-icons">movie</i>
+                    {% endif %}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+            </section>
+            {% endfor %}
+            
+         </div>
           </section>
         </div>
-	{% endfor %}	
+    {% endfor %}    

@@ -4,32 +4,21 @@
 # longer blocks of text should start with a a leading > to escape all special characters
 
 # URL handle for generated webpage
-slug:      ch01s02
-
+slug:      ch01s01zoo
+toc_entry: Smooth Functions and Curves
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
+## Smooth Functions and Curves
 
-## A Word of Warning
+The by far larger section of our zoo has a collection of animals from the family of maps. A map is a very general concept in mathematics, but they all have in common that they take something as input and give in return something as output. The input and output might be of the same species or an entirely different animal. In our zoo we are only concerned with maps that live on Riemannian manifolds. 
 
-So far we have not mathematically introduced anything that is surprising or complicated. If you had troubles following so far it's best to go back and review the underlying concepts.
+Let’s start by looking at one of the more familiar species, the continuous function.
+A continuous function will give us a scalar number at each point on the manifold. 
 
-However, _Tangent Vectors_, which come next, are the building block for many advanced concepts and it is important to understand them thoroughly. 
-Also this is a good point to become aware that for many people there is a mismatch between the intuition for tangent vectors and the mathematical formulation. 
-It is very important to appreciate the rigorous mathematical definition and to understand why it is not defined more closely to what people often think of.
-The confusion probably stems from the early exposure of many students to vector calculus, where vectors are elements of a Euclidean space. 
-Physics makes heavy use of vector calculus for the same reason as it makes use of differential geometry: The need to understand and describe _change_.
-However, the problem that arises with vector calculus is that it describes _change_ from an exterior view of space. 
-This exterior view comes very natural to many students and is adopted early on. 
-The intrinsic view where we describe _change_ on spaces that aren't Euclidean, but can be curved, is less intuitive and somehow feels less natural. 
-In fact we use manifolds which describe curved spaces as locally 'flat' spaces. It is obvious that 'flat' is the less complicated case and probably therefore feels more intuitive.
-However, Physics needs to deal with all kinds of spaces and therefore we need to choose between the higher complexity but more general notion of curved spaces (the intrinsic view), or with many more higher dimensional flat spaces (the exterior view).
+We can think of the function as something that takes a point as input and gives a number as an output. The specialty of a continuous function is that when we move the input point continuously it will produce a continuous output. That is to say that we will not be able to move a point around and discover jumps in the output value of the function. Let’s have a closer look at this property: If we take two points close to each other the continuous function will give us two different values from the real numbers. These two values get closer to each other when we move the points closer. However, for two points, no matter how close, the function might always return two different values. Since these values are from the real numbers there are infinitely many other numbers between them. That does certainly look like a jump. Therefore the property continuity (the property of not having jumps) is precisely defined a little bit different: It is formulated like this: You give me a point and tell me a value that is so small that you would accept it as not being a jump (let's call this value epsilon), then I can guarantee you that by moving the second point closer, that the function will return two values which are below epsilon. We call a function continuous when it fulfills this property no matter how small your epsilon is. 
 
-The problem that arises for many students in the understanding of differential geometry is the misunderstanding of what a _vector_ is.
-It is worth noting here that as such the term _vector_ doesn't make much sense and the only thing that can safely be said about a _vector_ is that it is the element of a _vector space_.
-Often _vector space_ is understood intuitively with the image of the very specific case of Euclidean space modeled with the Cartesian real coordinate space $$\mathbb R^n$$. 
-Every student is familiar with this concept and with vector space addition and scalar multiplication. While this intuitive image serves very well for many problems, it is important to understand that it is only a very special case of a vector space.
-When we talk about _tangent vectors_ in differential geometry this simplified image of a 'vector' (the element of a Cartesian coordinate space) gets in our way to understand the more general concepts.
+The idea of a moving point is a very powerful and important concept in geometry. More specifically we are interested in curves which are the trajectory of a continuously moving point. We can think of a curve as an animal that lives on the manifold. It takes a scalar parameter as input and produces a point. Continuously varying the parameter produces a continuous curve of points. 
 
-The reader should keep this warning in mind when trying to understand the (at first sight unintuitive) definition of the tangent vector space of a smooth manifold.
+Since a curve is continuous it has a tangent at every point along the curve. The tangent is a purely geometric object that has a direction. When we change the curve the tangent might point in a different direction. 

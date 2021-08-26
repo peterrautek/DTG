@@ -4,71 +4,17 @@
 # longer blocks of text should start with a a leading > to escape all special characters
 
 # URL handle for generated webpage
-slug:      ch02s01
-toc_entry: Charts, Atlas, Co-ordinates, Chart Transitions
+slug:      ch01s02
+
 # specifies layout to be used for page generation (do not modify)
 layout:     card
 ---
 
-## Co-ordinates - Good or Bad?
-So far we haven't said much about co-ordinates, because we kept concepts mathematical. 
-Once you want to start computing anything on a manifold you will need to understand the relation between co-ordinates, charts, and manifolds.
 
-The charts are the objects that will allow us to compute something on a manifold. 
-From the charts we get co-ordinates, and a basis for the tangent vector spaces. 
-They allow us to use real numbers for our computations.
-Consequently for the practitioner the charts are very important objects. 
+## A New Animal in the Zoo
 
-For the mathematician and the theoretical physicist who derive facts about manifolds in general, 
-the charts are the evil objects that need to be avoided as much as possible. 
-The reason being that showing something in a chart-free (i.e., co-ordinate-free) way means that we can avoid 
-to write it down for every possible co-ordinate system. 
-It simply works for any co-ordinate system.
+So far these animals should all look quite familiar. However, the next animal in the zoo might be a little more surprising. The name of the animal should sound familiar but when we inspect it more closely it has a few surprising properties. The animal is called a tangent vector. A tangent vector lives at the tangent space - a space at a specific point of a manifold. The space is defined by means of all possible tangents to all possible curves through that point. The surprising thing might be that a tangent vector is not the same as a tangent. It is not a geometrical object but a function - a linear map - that eats a continuous function and produces a real number. A specific tangent vector animal lives at a certain point and has the curve built into it. When we give it a continuous function it will produce a number by calculating the derivative of the function along the curve. I would argue that this is a weird animal - and that it only lives through the virtue of a specific point on a specific manifold and a specific curve through that point. But we are not here to judge animals - we are here to get to get to know the zoo!
 
-## Charts and Co-ordinates
+The species of tangent vectors is particularly interesting and we should have a closer look at it. We depart from our perspective as a zoologist and take the role of a functional biologist. How does the tangent vector work, specifically how does it digest a continuous function and turn it into a real number. The organ that is responsible for this function is the differential structure. The differential structure takes a point on a manifold, a curve that goes through it, and a continuous function. It combines them in such a way that the number it returns is the derivative of the function at the given point along the given curve. 
 
-Let $$M$$ be a $$d$$-dimensional manifold. 
-A pair $$(U,x)$$ where $$U$$ is an open set in the topological manifold and 
-$$x: U \to x(U) \subseteq \mathbb R^d$$ is a homeomorphism (has a continuous inverse), is said to be a _chart_ of the manifold.
-
-The _component functions_ of $$x: U\to x(U)$$ are the maps:
-
-$$x^i : U  \to \mathbb R$$
-
-$$p \mapsto \text{proj}_i(x(p))$$
-
-for $$1\leq i\leq d$$, where $$\text{proj}_i(x(p))$$ is the $$i$$-th component of $$x(p)\in \mathbb R^d$$. 
-The $$x^i(p)$$ are called the _co-ordinates_ of the point $$p\in U$$ with respect to the chart $$(U,x)$$.
-
-
-### Atlas
-
-An _atlas_ of a manifold $$M$$ is a collection $$\mathscr{A}:=\{(U_\alpha,x_\alpha)\mid \alpha \in \mathcal{A}\}$$ of charts such that:
-
-$$\bigcup_{\alpha \in \mathcal{A}}U_\alpha = M. $$
-
-
-### Chart Transition Maps
-
-Two charts $$(U,x)$$ and $$(V,y)$$ are said to be $$\mathcal{C}^0$$_-compatible_ if 
-either $$U \cap V = \emptyset$$ or the map:
-$$
-y\circ x^{-1}: x(U\cap V) \to y(U\cap V)
-$$
-is continuous.
-
-
-Note that $$y\circ x^{-1}$$ is a map from a subset of $$\mathbb R^d$$ to a subset of $$\mathbb R^d$$.
-
-
-[//]: # & U\cap V \se M \ar[ldd,"x"'] \ar[rdd,"y"]&\\
-[//]: # &&&\\
-[//]: # x(U\cap V) \se \R^d \ar[rr,"y\circ x^{-1}"']& & y(U\cap V)\se \R^d
-[//]: # \end{tikzcd}
-
-
-Since the maps $$x$$ and $$y$$ are homeomorphisms, the composition map $$y \circ x^{-1}$$ is also a homeomorphism 
-and hence continuous. 
-Therefore, any two charts on a topological manifold are $$\mathcal{C}^0$$-compatible. 
-
-The map $$y\circ x^{-1}$$ (and its inverse $$x\circ y^{-1}$$) is called the _chart transition map_.
+If we look at it mathematically the differential structure borrows its functionality from elementary calculus - remember - we can do that because locally we can treat the manifold as a flat space. 
